@@ -61,6 +61,7 @@ import { Vue, Component } from 'vue-property-decorator'
 @Component
 export default class HelloWorld extends Vue {
   name: 'hello world'
+  private msg: string = '-. -'
 }
 </script>
 
