@@ -6,3 +6,25 @@ $gray2: rgb(181, 180, 186);
 $gray3: rgb(115, 114, 120);
 $gray4: rgb(64, 63, 69);
 $yellow: rgb(210, 235, 35);
+
+@mixin px2px($name, $px) {
+  #{$name}: round($px / 2) * 1px;
+  [data-dpr='2'] & {
+    #{$name}: $px * 1px;
+  }
+  [data-dpr='2.5'] & {
+    #{$name}: round($px * 2.5 / 2) * 1px;
+  }
+  [data-dpr='2.75'] & {
+    #{$name}: round($px * 2.75 / 2) * 1px;
+  }
+  [data-dpr='3'] & {
+    #{$name}: round($px * 3 / 2) * 1px;
+  }
+  [data-dpr='4'] & {
+    #{$name}: $px * 2px;
+  }
+}
+
+// 状态栏高度
+$status-height: 1.7067rem;

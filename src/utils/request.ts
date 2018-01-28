@@ -16,7 +16,7 @@ export function formatData(payload: { [prop: string]: any }): FormData {
   return formData
 }
 
-interface IRes {
+export interface IRes {
   data?: any,
   err?: any
 }
@@ -35,4 +35,21 @@ export async function request (url: string, options?: IOptions) {
     res.data = undefined
   }
   return res
+}
+
+/* 获取openID */
+export async function fetchOpenID () {
+  const { data, err }: IRes = await fetch('http://api.jtuntech.com/event/2017/Q4/porsche/wx/output.php', {
+    method: 'GET',
+    credentials: 'include'
+  })
+  if (err) {
+    console.log(err)
+    return
+  }
+  if (+data.status === 1 && data.msg.UserOpenId) {
+    return data.msg.UserOpenId
+  } else {
+    window.location.href = `http://api.jtuntech.com/event/2017/Q4/porsche/wx/login.php?url=${location.href}`
+  }
 }
