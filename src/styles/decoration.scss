@@ -9,22 +9,28 @@ $yellow: rgb(210, 235, 35);
 
 @mixin px2px($name, $px) {
   #{$name}: round($px / 2) * 1px;
-  [data-dpr='2'] & {
+  [data-dpr='2.0'] & {
     #{$name}: $px * 1px;
   }
   [data-dpr='2.5'] & {
     #{$name}: round($px * 2.5 / 2) * 1px;
   }
+  [data-dpr='2.6'] & {
+    #{$name}: round($px * 2.6 / 2) * 1px;
+  }
   [data-dpr='2.75'] & {
     #{$name}: round($px * 2.75 / 2) * 1px;
   }
-  [data-dpr='3'] & {
+  [data-dpr='3.0'] & {
     #{$name}: round($px * 3 / 2) * 1px;
   }
-  [data-dpr='4'] & {
+  [data-dpr='3.5'] & {
+    #{$name}: round($px * 3.5 / 2) * 1px;
+  }
+  [data-dpr='4.0'] & {
     #{$name}: $px * 2px;
   }
 }
 
-// 状态栏高度
+// 状态栏高度  设计稿 750px
 $status-height: 1.7067rem;
