@@ -17,7 +17,7 @@ export function formatData(payload: { [prop: string]: any }): FormData {
 }
 
 export interface IRes {
-  data?: any,
+  data?: any
   err?: any
 }
 /**
@@ -25,9 +25,9 @@ export interface IRes {
  * @param url string
  * @param options IOptions
  */
-export async function request (url: string, options?: IOptions) {
+export async function request(url: string, options?: IOptions) {
   const { data, err }: IRes = await fetch(`${prefix}${url}`, options)
-  const res: { data: any, err: any, fail: any } = { data, err, fail: undefined }
+  const res: { data: any; err: any; fail: any } = { data, err, fail: undefined }
   if (err) {
     // x
   } else if (+data.code !== 200) {
@@ -38,18 +38,20 @@ export async function request (url: string, options?: IOptions) {
 }
 
 /* 获取openID */
-export async function fetchOpenID () {
-  const { data, err }: IRes = await fetch('http://api.jtuntech.com/event/2017/Q4/porsche/wx/output.php', {
-    method: 'GET',
-    credentials: 'include'
-  })
+export async function fetchOpenID(mid: string) {
+  const { data, err }: IRes = await fetch(
+    `http://api.jtuntech.com/weixin/showOpenidUsr.action?id=2&mid=${mid}`
+  )
   if (err) {
     console.log(err)
     return
   }
-  if (+data.status === 1 && data.msg.UserOpenId) {
-    return data.msg.UserOpenId
+  const { resultcode: code, result } = data
+  if (+code !== 200 && !result) {
+    window.location.href = `http://api.jtuntech.com/weixin/showWeixinTokenUsr.action?id=2&hurl=${
+      location.href
+    }&mid=${mid}`
   } else {
-    window.location.href = `http://api.jtuntech.com/event/2017/Q4/porsche/wx/login.php?url=${location.href}`
+    return result
   }
 }
