@@ -18,8 +18,14 @@ $yellow: rgb(210, 235, 35);
   [data-dpr='2.6'] & {
     #{$name}: round($px * 2.6 / 2) * 1px;
   }
-  [data-dpr='2.75'] & {
-    #{$name}: round($px * 2.75 / 2) * 1px;
+  [data-dpr='2.7'] & {
+    #{$name}: round($px * 2.7 / 2) * 1px;
+  }
+  [data-dpr='2.8'] & {
+    #{$name}: round($px * 2.8 / 2) * 1px;
+  }
+  [data-dpr='2.9'] & {
+    #{$name}: round($px * 2.9 / 2) * 1px;
   }
   [data-dpr='3.0'] & {
     #{$name}: round($px * 3 / 2) * 1px;
@@ -32,5 +38,5 @@ $yellow: rgb(210, 235, 35);
   }
 }
 
-// 状态栏高度  设计稿 750px
+// 状态栏高度
 $status-height: 1.7067rem;
