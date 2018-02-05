@@ -1,7 +1,7 @@
 {
-  "name": "{{projectName}}",
-  "version": "{{projectVersion}}",
-  "description": "{{projectDescription}}",
+  "name": "xx",
+  "version": "1.0.0",
+  "description": "xx",
   "author": "imuntil <imuntil@qq.com>",
   "private": true,
   "scripts": {
