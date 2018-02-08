@@ -12,7 +12,8 @@
       "object-literal-sort-keys": false,
       "space-before-function-paren": false,
       "arrow-parens": false,
-      "no-console": false
+      "no-console": false,
+      "no-shadowed-variable": false
     },
     "rulesDirectory": []
 }
