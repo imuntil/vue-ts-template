@@ -8,7 +8,6 @@
     "moduleResolution": "node",
     "target": "es5",
     "experimentalDecorators": true,
-    "strictPropertyInitialization": false,
     "lib": [
       "dom",
       "es5",
