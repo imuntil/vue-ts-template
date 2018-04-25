@@ -1,4 +1,4 @@
-# vue-ts-template
+# ts
 
 > A Vue.js project
 
