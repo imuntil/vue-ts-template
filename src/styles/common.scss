@@ -1,3 +1,44 @@
 @import './reset.css';
 @import './base.scss';
 @import './decoration.scss';
+html,
+body {
+  // @include px2px(font-size, 30);
+  height: 100%;
+  width: 100%;
+  background-color: transparent;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* 页面切换动画 */
+
+$t: 30px;
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 0.2s;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.fade-enter {
+  transform: translate(-$t, $t);
+}
+
+.fade-leave-to {
+  transform: translate($t, $t);
+}
+
+.fade-leave,
+.fade-enter-to {
+  opacity: 1;
+  transform: translate(0, 0);
+}
