@@ -41,8 +41,7 @@ export const random: (length?: number) => string = (length = 12) => {
 /* 千分符 */
 export const thousandth = (str: string | number) => {
   const reg = /\d(?=(?:\d{3})+(?:\.\d+|$))/g
-  const s = typeof str === 'string' ? str : str.toFixed(2)
-  return s.replace(reg, (...rest) => rest[0] + ',')
+  return (+str).toFixed(2).replace(reg, (...rest) => rest[0] + ',')
 }
 
 /* 货币格式化 */
