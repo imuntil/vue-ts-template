@@ -4,7 +4,7 @@ export const delay: (ms: number) => Promise<{}> = ms => {
 
 export type Func = (s: any) => any
 export const debounce = (action: Func, delay: number) => {
-  let timer: number
+  let timer: any
   return (...rest: any[]) => {
     clearTimeout(timer)
     timer = setTimeout(() => {
